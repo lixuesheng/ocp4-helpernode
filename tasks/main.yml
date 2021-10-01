@@ -22,6 +22,11 @@
   - name: set setup facts
     include: set_facts_.yaml
 
+  - name: Setup CentOS repo
+    template:
+      src: ../templates/fedora.repo
+      dest: /etc/yum.repos.d/fedora.repo
+      
   - name: Install needed packages
     package:
       name: "{{ packages }}"
