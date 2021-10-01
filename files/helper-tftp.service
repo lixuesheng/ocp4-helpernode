@@ -1,0 +1,13 @@
+[Unit]
+Description=Starts TFTP on boot because of reasons
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/start-tftp.sh
+TimeoutStartSec=0
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=default.target
