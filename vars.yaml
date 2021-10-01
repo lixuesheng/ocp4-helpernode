@@ -1,0 +1,31 @@
+---
+ssh_gen_key: false
+staticips: true
+helper:
+  name: "helper"
+  ipaddr: "10.0.100.240"
+dns:
+  domain: "gpfs.net"
+  clusterid: "scale"
+  forwarder1: "9.114.205.28"
+  forwarder2: "9.0.130.50"
+bootstrap:
+  name: "bootstrap"
+  ipaddr: "10.0.100.239"
+masters:
+  - name: "master0"
+    ipaddr: "10.0.100.233"
+  - name: "master1"
+    ipaddr: "10.0.100.234"
+  - name: "master2"
+    ipaddr: "10.0.100.235"
+workers:
+  - name: "worker0"
+    ipaddr: "10.0.100.236"
+  - name: "worker1"
+    ipaddr: "10.0.100.237"
+  - name: "worker2"
+    ipaddr: "10.0.100.238"
+other:
+  - name: "testa"
+    ipaddr: "10.0.100.230"    
