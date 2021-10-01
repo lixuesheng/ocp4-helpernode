@@ -26,6 +26,10 @@ workers:
     ipaddr: "10.0.100.237"
   - name: "worker2"
     ipaddr: "10.0.100.238"
-other:
-  - name: "testa"
-    ipaddr: "10.0.100.230"    
+#other:
+#  - name: "testa"
+#    ipaddr: "10.0.100.230"    
+
+ocp_installer: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.8/openshift-install-linux.tar.gz"
+ocp_client: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.8/openshift-client-linux.tar.gz"
+coreos_installer: "https://mirror.openshift.com/pub/openshift-v4/clients/coreos-installer/latest/coreos-installer"
