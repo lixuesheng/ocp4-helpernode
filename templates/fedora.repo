@@ -1,0 +1,18 @@
+#[fedora]
+#name=fedora update
+#baseurl=http://pubmirror1.math.uh.edu/fedora-buffet/archive//fedora/linux/releases/31/Everything/x86_64/os/
+#enabled=1
+#gpgcheck=0
+
+[centos]
+name=centos
+baseurl=http://mirror.centos.org/centos/8/PowerTools/x86_64/os/
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud
+
+[cloud-train]
+name=cloudtrain
+baseurl=http://mirror.centos.org/centos/8/cloud/x86_64/openstack-train/
+gpgcheck=0
+enabled=1
