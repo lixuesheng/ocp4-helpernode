@@ -1,3 +1,9 @@
+For IBM Spectrum Scale BDA team Openstack env only
+
+ansible-playbook -e @vars.yaml tasks/main.yml
+
+
+
 # OCP4 Helper Node
 
 > :heavy_exclamation_mark: *Red Hat support cannot assist with problems with this Repo*. For issues please open a GitHub issue
