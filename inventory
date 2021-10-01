@@ -1,2 +1,3 @@
 [vmhost]
-localhost ansible_connection=local
+#localhost ansible_connection=local
+lixuesh-01  ansible_ssh_pass=cluster

@@ -139,6 +139,9 @@
       - "/var/www/html/install/rootfs.img"
       - "/var/lib/tftpboot/rhcos/initramfs.img"
       - "/var/lib/tftpboot/rhcos/kernel"
+      - "/var/www/html/install/rhcos-live.x86_64.iso"
+      - "/var/www/html/install/rhcos-metal.x86_64.raw.gz"
+      - "/var/www/html/install/rhcos-qemu.x86_64.qcow2.gz"
     when: force_ocp_download
 
   - name: Downloading OCP4 installer Bios
@@ -523,6 +526,11 @@
       url: "{{ ocp_installer }}"
       dest: /usr/local/src/openshift-install-linux.tar.gz
 
+  #- name: Downloading CoreOS Installer
+  #  get_url:
+  #    url: "{{ coreos_installer }}"
+  #    dest: /usr/local/src/coreos-installer
+
   - name: Unarchiving OCP4 client
     unarchive:
       src: /usr/local/src/openshift-client-linux.tar.gz
@@ -534,6 +542,30 @@
       src: /usr/local/src/openshift-install-linux.tar.gz
       dest: /usr/local/bin
       remote_src: yes
+
+  - name: Prepare CoreOS Installer
+    get_url:
+      url: "{{ coreos_installer }}"
+      dest: /usr/local/bin/coreos-installer
+      mode: 'a+rx'
+
+  - name: Prepare RHCOS live iso
+    get_url:
+      url: "{{ rhcos_iso }}"
+      dest: /var/www/html/install/rhcos-live.x86_64.iso
+      mode: 'a+r'
+
+  - name: Prepare RHCOS metal
+    get_url:
+      url: "{{ rhcos_metal }}"
+      dest: /var/www/html/install/rhcos-metal.x86_64.raw.gz
+      mode: 'a+r'
+
+  - name: Prepare RHCOS qemu
+    get_url:
+      url: "{{ rhcos_qemu }}"
+      dest: /var/www/html/install/rhcos-qemu.x86_64.qcow2.gz
+      mode: 'a+r'
 
   - name: Removing files that are not needed
     file:
