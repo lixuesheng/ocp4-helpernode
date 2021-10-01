@@ -685,6 +685,12 @@
       state: stopped
     when: (dhcp.dns is defined and dhcp.dns != helper.ipaddr) or (dns.lb_ipaddr is defined and dns.lb_ipaddr != helper.ipaddr)
 
+  - name: Prepare Ignition config files
+    #include_tasks: ignition_generate.yml
+    import_tasks: ignition_generate.yml
+    when: prepare_ignition | bool
+    tags: ignition
+    
   - name:  Information about this install
     debug:
       msg:

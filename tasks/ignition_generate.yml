@@ -1,0 +1,33 @@
+- name: Clean ignition files
+  file:
+    path: /var/www/html/ignition
+    state: absent
+
+- name: Create ignition directory again
+  file:
+    path: /var/www/html/ignition
+    state: directory
+    mode: '0755'
+
+- name: Distribute install-config.yaml 
+  template:
+    src: ../templates/install-config.yaml.j2
+    dest: /var/www/html/ignition/install-config.yaml
+
+- name: Generate manifests files
+  shell: openshift-install --dir /var/www/html/ignition create manifests
+  register: manifests_out
+
+- debug: var=manifests_out.stdout
+
+- name: Change MastersSchedulable to false
+  shell: "sed -i 's/mastersSchedulable: true/mastersSchedulable: false/' /var/www/html/ignition/manifests/cluster-scheduler-02-config.yml"
+
+- name: Generate Ignition config files
+  shell: openshift-install --dir /var/www/html/ignition create ignition-configs
+  register: ignition_out
+
+- debug: var=ignition_out.stdout
+
+- name: chmod for ignition files
+  shell: chmod a+r /var/www/html/ignition/*

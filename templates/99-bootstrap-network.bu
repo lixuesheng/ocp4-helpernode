@@ -1,0 +1,21 @@
+variant: fcos
+version: 1.4.0
+storage:
+  files:
+    - path: /etc/NetworkManager/system-connections/${interface}.nmconnection
+      mode: 0600
+      contents:
+        inline: |
+          [connection]
+          id=${interface}
+          type=ethernet
+          interface-name=${interface}
+          [ipv4]
+          address1=${ip}/${prefix},${gateway}
+          dhcp-hostname=${hostname}
+          dns=${nameserver};
+          dns-search=
+          may-fail=false
+          method=manual
+
+
