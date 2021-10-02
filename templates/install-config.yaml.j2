@@ -21,5 +21,5 @@ networking:
   - cidr: {{ machineNetwork[0].cidr }}
 platform:
   none: {}
-pullSecret: '{% include pull_Secret %}'
-sshKey: '{% include "ssh-cloud-key/cloud-key.pub" %}'
+pullSecret: '{% include "pull-Secret/pull-secret" %}'
+sshKey: '{% include "ssh-key/id_rsa.pub" %}'

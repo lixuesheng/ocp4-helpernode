@@ -9,6 +9,20 @@
     state: directory
     mode: '0755'
 
+- name: Copy pull secret to templates/pull-Secret dir
+  shell: cp -f "{{ pull_Secret }}" ../templates/pull-Secret/pull-secret
+  delegate_to: localhost
+
+- name: Copy id_rsa.pub to templates/ssh-key
+  shell: cp -f "{{ ansible_env.HOME }}/.ssh/id_rsa.pub" ../templates/ssh-key/id_rsa.pub
+  delegate_to: localhost
+  when: not ssh_gen_key 
+
+- name:
+  shell: cp -f "{{ ansible_env.HOME }}/.ssh/helper_rsa.pub" ../templates/ssh-key/id_rsa.pub
+  delegate_to: localhost
+  when: ssh_gen_key
+
 - name: Distribute install-config.yaml 
   template:
     src: ../templates/install-config.yaml.j2

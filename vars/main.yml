@@ -1,6 +1,6 @@
 ---
-ssh_gen_key: true
-prepare_ignition: true
+ssh_gen_key: false
+prepare_ignition: false
 install_filetranspiler: false
 staticips: false
 force_ocp_download: false
@@ -14,7 +14,8 @@ coreos_installer: "https://mirror.openshift.com/pub/openshift-v4/clients/coreos-
 rhcos_iso: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-live.x86_64.iso"
 rhcos_qemu: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-qemu.x86_64.qcow2.gz"
 rhcos_metal: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-metal.x86_64.raw.gz"
-machineNetwork_cidr: "10.0.100.0/24"
+machineNetwork:
+  -cidr: "10.0.100.0/24"
 helm_source: "https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz"
 chars: (\\_|\\$|\\\|\\/|\\=|\\)|\\(|\\&|\\^|\\%|\\$|\\#|\\@|\\!|\\*)
 ppc64le: false

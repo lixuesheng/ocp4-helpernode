@@ -1,5 +1,6 @@
 ---
-ssh_gen_key: false
+ssh_gen_key: false   
+  #
 staticips: true
 helper:
   name: "helper"
@@ -39,4 +40,4 @@ rhcos_iso: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/lat
 rhcos_qemu: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-qemu.x86_64.qcow2.gz"
 rhcos_metal: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/latest/latest/rhcos-metal.x86_64.raw.gz"
 prepare_ignition: true
-pull_Secret: 'pull-secret'
+pull_Secret: '../pull-secret'
