@@ -1,7 +1,5 @@
 ---
 ssh_gen_key: false   
-  #
-staticips: true
 helper:
   name: "helper"
   ipaddr: "10.0.100.240"
