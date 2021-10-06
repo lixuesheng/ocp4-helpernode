@@ -2,19 +2,14 @@
 
 How to use this repo:
 
-On your mgmt node
+On your mgmt node(ansible server)
 
-git clone https://github.com/lixuesheng/ocp4-helpernode.git
-
-copy pull secret file to ./ and name it 'pull-secret'
-
-edit inventory file
-
-edit vars.yaml file
-
-run below cmd to setup Helper node
-
-ansible-playbook -e @vars.yaml tasks/main.yml
+1. git clone https://github.com/lixuesheng/ocp4-helpernode.git
+2. copy pull secret file to ./ and name it 'pull-secret'
+3. edit inventory file. Provide the Helper node info.
+4. edit vars.yaml file
+5. run below cmd to setup Helper node
+  ansible-playbook -e @vars.yaml tasks/main.yml
 
 
 
