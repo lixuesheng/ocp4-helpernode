@@ -1,8 +1,8 @@
-# For IBM Spectrum Scale BDA team Openstack env only
+# For UPI installation only
 
 How to use this repo:
 
-1, On your mgmt node
+On your mgmt node
 
 git clone https://github.com/lixuesheng/ocp4-helpernode.git
 
