@@ -1,12 +1,19 @@
 # For IBM Spectrum Scale BDA team Openstack env only
 
 How to use this repo:
+
 1, On your mgmt node
+
 git clone https://github.com/lixuesheng/ocp4-helpernode.git
+
 copy pull secret file to ./ and name it 'pull-secret'
+
 edit inventory file
+
 edit vars.yaml file
+
 run below cmd to setup Helper node
+
 ansible-playbook -e @vars.yaml tasks/main.yml
 
 
