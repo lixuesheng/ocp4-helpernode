@@ -2,7 +2,7 @@
 ssh_gen_key: false
 prepare_ignition: false
 install_filetranspiler: false
-staticips: false
+staticips: true
 force_ocp_download: false
 remove_old_config_files: false
 ocp_bios: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.8/4.8.2/rhcos-4.8.2-x86_64-live-rootfs.x86_64.img"
